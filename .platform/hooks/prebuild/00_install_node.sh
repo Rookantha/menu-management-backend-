@@ -1,3 +1,7 @@
 #!/bin/bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt-get install -y nodejs
+
+# Update package lists
+sudo yum update -y
+
+# Install Node.js and npm
+sudo yum install -y nodejs npm
