@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# Detect OS and install Node.js accordingly
-if [ -f /etc/debian_version ]; then
-    # Debian-based system (Ubuntu, Debian)
-    sudo apt-get update -y
-    sudo apt-get install -y nodejs npm
-elif [ -f /etc/redhat-release ]; then
-    # Amazon Linux / RHEL / CentOS
-    sudo yum install -y nodejs npm
+# Detect OS
+if [[ -f /etc/debian_version ]]; then
+    echo "Debian-based system detected. Installing Node.js..."
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+    apt-get install -y nodejs
+elif [[ -f /etc/redhat-release ]]; then
+    echo "Amazon Linux / RHEL-based system detected. Installing Node.js..."
+    curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+    yum install -y nodejs
 else
     echo "Unsupported OS. Please install Node.js manually."
     exit 1
