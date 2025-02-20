@@ -1,6 +1,12 @@
 #!/bin/bash
-# Enable Node.js 20 for the environment
+# Install Node.js 20 on Amazon Linux 2023
+
 . /opt/elasticbeanstalk/env.vars
-sudo yum install -y gcc-c++ make
-curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo -E bash -
-sudo yum install -y nodejs
+
+echo "Installing Node.js 20..."
+sudo dnf module reset nodejs -y
+sudo dnf module enable nodejs:20 -y
+sudo dnf install -y nodejs
+
+echo "Node.js version after installation:"
+node -v
