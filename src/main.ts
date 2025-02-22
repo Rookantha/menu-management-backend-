@@ -11,7 +11,7 @@ async function bootstrap() {
   });
 
   // Ensure the correct port for AWS Elastic Beanstalk
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 80;
 
   await app.listen(port, '0.0.0.0'); //
 
