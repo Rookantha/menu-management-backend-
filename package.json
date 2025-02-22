@@ -9,9 +9,9 @@
   "scripts": {
     "prebuild": "npx prisma generate",
     "build": "nest build",
-    "start": "node dist/main",
+    "start": "node dist/main.js",
     "start:dev": "nest start --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/main.js",
     "postinstall": "npm run migrate:deploy",
     "migrate:deploy": "npx prisma migrate deploy",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -60,19 +60,13 @@
     "typescript": "^5.7.3"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
+    "moduleFileExtensions": ["js", "json", "ts"],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
+    "collectCoverageFrom": ["**/*.(t|j)s"],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
