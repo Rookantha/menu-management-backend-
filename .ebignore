@@ -1,0 +1,61 @@
+# Compiled output
+/dist
+/node_modules
+/build
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS system files
+.DS_Store
+
+# Test and coverage reports
+/coverage
+/.nyc_output
+
+# IDE and editor-specific files
+/.idea
+/.vscode/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Keep VSCode settings but exclude workspace cache
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files (avoid exposing secrets)
+/.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Temporary files and build cache
+.temp/
+.tmp/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# AWS Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
