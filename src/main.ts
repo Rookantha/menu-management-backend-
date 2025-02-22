@@ -11,14 +11,22 @@ async function bootstrap() {
     credentials: true,
   });
 
-  // Use PORT from environment variables (AWS Elastic Beanstalk uses 8080)
+  // Ensure Elastic Beanstalk provides the correct PORT
   const port = process.env.PORT || 8080;
 
-  // Ensure app initializes before listening
-  await app.init();
+  // Log the port for debugging
+  console.log(`Using PORT: ${port}`);
+
+  // Bind to all available network interfaces
   await app.listen(port, '0.0.0.0');
 
-  console.log(`🚀 Server is running on: ${process.env.NODE_ENV === 'production' ? 'AWS Elastic Beanstalk' : 'Localhost'} at http://0.0.0.0:${port}`);
+  console.log(
+    `🚀 Server is running on: ${
+      process.env.NODE_ENV === 'production'
+        ? 'AWS Elastic Beanstalk'
+        : 'Localhost'
+    } at http://0.0.0.0:${port}`,
+  );
 }
 
 bootstrap();
