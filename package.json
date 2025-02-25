@@ -7,19 +7,19 @@
   "license": "UNLICENSED",
   "main": "dist/main.js",
   "scripts": {
-    "prebuild": "npx prisma generate",
-    "build": "nest build",
-    "start": "node dist/main.js",
-    "start:dev": "nest start --watch",
-    "start:prod": "node dist/main.js",
-    "postinstall": "npm run migrate:deploy",
-    "migrate:deploy": "npx prisma migrate deploy",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
-  },
+  "prebuild": "npx prisma generate",
+  "build": "nest build",
+  "postbuild": "npx prisma migrate deploy",
+  "start": "NODE_ENV=production node dist/main.js",
+  "start:dev": "nest start --watch",
+  "start:prod": "NODE_ENV=production node dist/main.js",
+  "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+  "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:cov": "jest --coverage"
+}
+,
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
