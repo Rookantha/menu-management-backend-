@@ -11,6 +11,7 @@
     "build": "npx nest build"
 ,
     "postbuild": "npx prisma migrate deploy",
+    "vercel-build": "npx prisma generate && npx nest build",
     "start": "NODE_ENV=production node dist/main.js",
     "start:dev": "nest start --watch",
     "start:prod": "NODE_ENV=production node dist/main.js",
