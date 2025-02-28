@@ -1,16 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/main.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/main.js"
-      }
-    ]
+  "version": 2,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "postgresql://postgres:jfvyD45ehb@database-1.cw7o2m0e6fzg.us-east-1.rds.amazonaws.com:5432/menuManagementDB"
   }
-  
+}
